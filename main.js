@@ -19,24 +19,51 @@ numberContainer.appendChild(number);
 
 // Buttons references
 let increaseButton = document.querySelector('.increase-btn');
-console.log(increaseButton);
+let decreaseButton = document.querySelector('.decrease-btn');
 
 
-function increment() {
+
+function increase() {
     counter = counter +1;
+
     number.innerHTML = counter;
     console.log('Increase button clicked!');
     console.log('Counter: ' + counter)
+
+    if (counter > 0) {
+        number.style.color = 'green';
+    }
+
+    else if (counter == 0 ){
+        number.style.color = 'orange';
+    }
+
+    
+
+  
     
 }
 
-increaseButton.addEventListener('click', increment);
+increaseButton.addEventListener('click', increase);
 
-function decrement() {
+function decrease() {
+
     counter = counter -1;
     number.innerHTML = counter;
     console.log('Counter: ' + counter);
+   
+     if (counter < 0 ){
+        number.style.color = 'red';
+    }
+
+    else if (counter == 0) {
+        number.style.color = 'orange';
+    };
+
+    
 }
+
+decreaseButton.addEventListener('click', decrease);
 
 
 
