@@ -1,28 +1,23 @@
 
 let counter = 0;
 
-
-// CREATE a number variable by dynamically creating a div under number-container
-
 // REFERENCE the number container
 let numberContainer = document.getElementById('number-container');
-console.log(numberContainer)
-
-// CREATE new div dynamically called number
 let number = document.createElement('div');
-console.log(number)
+
 // SET number div content 
 number.innerHTML = counter;
-
-// APPEND new number div to the number container referenced earlier
+number.style.color = 'orange';
+number.style.fontSize = '10rem';
 numberContainer.appendChild(number);
 
 // Buttons references
 let increaseButton = document.querySelector('.increase-btn');
 let decreaseButton = document.querySelector('.decrease-btn');
+let resetButton = document.querySelector('.reset-btn');
 
 
-
+// increments by 1
 function increase() {
     counter = counter +1;
 
@@ -39,13 +34,11 @@ function increase() {
     }
 
     
-
-  
-    
 }
 
 increaseButton.addEventListener('click', increase);
 
+// decrements by 1
 function decrease() {
 
     counter = counter -1;
@@ -64,6 +57,17 @@ function decrease() {
 }
 
 decreaseButton.addEventListener('click', decrease);
+
+function reset() {
+    
+    counter = 0;
+    number.innerHTML = counter;
+    number.style.color = 'orange';
+    console.log(counter);
+
+}
+
+resetButton.addEventListener('click',reset);
 
 
 
