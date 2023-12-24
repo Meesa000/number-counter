@@ -17,6 +17,22 @@ let decreaseButton = document.querySelector('.decrease-btn');
 let resetButton = document.querySelector('.reset-btn');
 
 
+function numColourChange() {
+    if (counter > 0) {
+        number.style.color = 'green';
+    }
+    
+    else if (counter < 0) {
+        number.style.color = 'red';
+    }
+
+    else if (counter == 0 ){
+        number.style.color = 'orange';
+    }
+
+
+}
+
 // increments by 1
 function increase() {
     counter = counter +1;
@@ -24,15 +40,7 @@ function increase() {
     number.innerHTML = counter;
     console.log('Increase button clicked!');
     console.log('Counter: ' + counter)
-
-    if (counter > 0) {
-        number.style.color = 'green';
-    }
-
-    else if (counter == 0 ){
-        number.style.color = 'orange';
-    }
-
+    numColourChange();
     
 }
 
@@ -44,16 +52,8 @@ function decrease() {
     counter = counter -1;
     number.innerHTML = counter;
     console.log('Counter: ' + counter);
-   
-     if (counter < 0 ){
-        number.style.color = 'red';
-    }
-
-    else if (counter == 0) {
-        number.style.color = 'orange';
-    };
-
-    
+    numColourChange();
+  
 }
 
 decreaseButton.addEventListener('click', decrease);
@@ -62,7 +62,7 @@ function reset() {
     
     counter = 0;
     number.innerHTML = counter;
-    number.style.color = 'orange';
+    numColourChange();
     console.log(counter);
 
 }
