@@ -9,6 +9,7 @@ let number = document.createElement('div');
 number.innerHTML = counter;
 number.style.color = 'orange';
 number.style.fontSize = '10rem';
+number.style.opacity = '0.7';
 numberContainer.appendChild(number);
 
 // Buttons references
@@ -33,11 +34,15 @@ function numColourChange() {
 
 }
 
-// increments by 1
+function updateNumber() {
+    number.innerHTML = counter;
+}
+
+// increment
 function increase() {
     counter = counter +1;
 
-    number.innerHTML = counter;
+    updateNumber();
     console.log('Increase button clicked!');
     console.log('Counter: ' + counter)
     numColourChange();
@@ -46,11 +51,11 @@ function increase() {
 
 increaseButton.addEventListener('click', increase);
 
-// decrements by 1
+// decrement
 function decrease() {
 
     counter = counter -1;
-    number.innerHTML = counter;
+    updateNumber();
     console.log('Counter: ' + counter);
     numColourChange();
   
@@ -58,10 +63,10 @@ function decrease() {
 
 decreaseButton.addEventListener('click', decrease);
 
+// reset
 function reset() {
-    
     counter = 0;
-    number.innerHTML = counter;
+    updateNumber()
     numColourChange();
     console.log(counter);
 

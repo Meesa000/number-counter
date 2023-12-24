@@ -1,8 +1,14 @@
 
+body {
+    background-color: rgb(36, 39, 41);
+    font-family: 'Roboto';
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Roboto';
     
 }
 #number-container {
@@ -10,8 +16,39 @@
    justify-content: center;
    align-items: center;
     width: 500px;
-    height: 300px;
+    height: 200px;
     /* border: 5px black solid;
     background-color: pink; */
 
+}
+
+#title-container {
+    font-size: 2rem;
+    color: white;
+
+}
+
+#button-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    
+}
+.btn {
+    color: white;
+    font-family: 'Roboto';
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid grey ;
+    width: 150px;
+    border-radius: 5px;
+    background-color: grey;
+    font-weight: bold;
+    
+}
+
+.btn:focus {
+    border: 2px solid blue;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
